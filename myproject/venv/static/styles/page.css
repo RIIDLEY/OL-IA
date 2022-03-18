@@ -1,0 +1,190 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@400;700&display=swap');
+
+
+#comment{
+  resize: vertical;
+  height: 50px;
+  min-height: 50px;
+}
+
+#progress_container {
+  width: 100%;
+  background-color: rgb(161, 161, 161);;
+  height: 30px;
+  position: relative;
+}
+
+#progress_container_text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+#progress_container_text_align_center {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading_bar {
+  height: 100%;
+  
+  background: 
+      linear-gradient(-45deg,
+        rgba(255, 255, 255, 0.15) 25%,transparent 25%, transparent 50%, 
+        rgba(255, 255, 255, 0.15) 50%, 
+        rgba(255, 255, 255, 0.15) 75%,transparent 75%) 
+      left/30px 30px repeat-x,
+      linear-gradient(to right, red 0%, yellow 50%, green 100%) left/var(--p,100%) fixed,lightgray;
+      
+  box-shadow:inset 0px -2px 5px rgba(0, 0, 0, 0.5);
+  animation: change 1s linear infinite;
+  
+}
+
+@keyframes change {
+  from {background-position:0 0,left}
+  to {background-position:30px 0,left}
+}
+
+html {
+  height: 100%;
+  min-height:800px;
+}
+body {
+  /*background: url('https://blog.stack-labs.com/images/articles/sentiment_analysis/sentiment-analysis.jpg');*/
+  background-size:cover;
+  background-repeat:no-repeat;
+  text-align: center;
+ font-family: 'Noto Sans', sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1{
+  font-weight:400;
+  padding-top:0;
+  margin-top:0;
+  font-family: 'Roboto Slab', serif;
+}
+
+#svg_form_time {
+  height: 15px;
+  max-width: 80%;
+  margin: 40px auto 20px;
+  display: block;
+}
+
+#svg_form_time circle,
+#svg_form_time rect {
+  fill: white;
+}
+
+.button {
+  background: rgb(237, 40, 70);
+  border-radius: 5px;
+  padding: 15px 25px;
+  display: inline-block;
+  margin: 10px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow:0px 2px 5px rgb(0,0,0,0.5);
+}
+
+.disabled {
+  display:none;
+}
+
+#sectionCommentPage {
+  padding: 50px ;
+  max-width: 700px;
+  margin: 30px auto;
+  background:white;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(10px);
+  box-shadow:0px 2px 10px rgba(0,0,0,0.3);
+  border-radius:5px;
+  transition:transform 0.2s ease-in-out;
+}
+
+input {
+  width: 100%;
+  margin: 7px 0px;
+  display: inline-block;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 1em;
+  font-family:inherit;
+  background:white;
+}
+
+textarea{
+  width: 100%;
+  margin: 7px 0px;
+  display: inline-block;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 1em;
+  font-family:inherit;
+  background:white;
+}
+
+p{
+  text-align:justify;
+margin-top:0;
+}
+
+
+#divTableResult{
+  padding: 50px ;
+  margin: 30px auto;
+  background:white;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(10px);
+  box-shadow:0px 2px 10px rgba(0,0,0,0.3);
+  border-radius:5px;
+  transition:transform 0.2s ease-in-out;
+}
+
+
+#tableResult{
+  width: fit-content;
+  border: solid 1px;
+}
+
+#tableResult, td {
+  border: solid 1px;
+  overflow-y: scroll;
+  
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+
+.buttonResult {
+  width: auto;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow:0px 2px 5px rgb(0,0,0,0.5);
+}

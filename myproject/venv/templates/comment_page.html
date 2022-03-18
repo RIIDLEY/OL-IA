@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/page.css') }}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type= "text/javascript" src="{{ url_for('static',filename='styles/page.js') }}"></script>
+
+
+
+
+<meta charset="UTF-8">
+
+<h1>Analyse de Commentaire</h1>
+<section id="sectionCommentPage">
+    <form action="comment_page_result" method="POST">
+        <p>Veuillez saisir le commentaire à analyser</p>
+        <div id="div_comment">
+            <input type="text" id="comment" name="comment" placeholder="Commentaire à analyser" required>
+            <!--<input type="number" id="commentVal" name="commentVal" placeholder="Pourcentage retourne du modele" max="100" required>-->
+        </div>
+        <input type="hidden" value="1" id="total_comment">
+        <input type="button" class="button" id="addInputButton" value="Analyser un autre commentaire" onclick="addInputComment()">
+        <!--<button type="submit" class="button" id="submit">Analyser le commentaire</button>-->
+        <input type="submit" class="button" value="Rechercher"><!--onclick="progBarUpdate()"-->
+    </form>
+</section>
+
+<div id="div_result">
+
+</div>
