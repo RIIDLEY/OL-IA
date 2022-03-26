@@ -34,7 +34,7 @@
                         {%for key, value in commentResult.items()%}
                         <tr>
                             <td>
-                                <input type="text" name="comment_{{key}}" value="{{value['comment']}}" readonly>
+                                <textarea type="text" name="comment_{{key}}" value="{{value['comment']}}" readonly>{{value['comment']}}</textarea>
                             </td>
                             <td>
                                 <input type="text" name="resultModel_{{key}}" value="{{value['comment_result']}}" readonly>

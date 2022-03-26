@@ -60,7 +60,7 @@ def comment_page():
                 #commentaire saisie
                 #resultat provenant du model
                 #si le resultat du modele est correcte ou non (corrigé par l'utilisateur)
-
+                
 
             #si le resultat du modele est mauvais
             #remplace la valeur du resultat du model par son inverse (positive <=> negative)
