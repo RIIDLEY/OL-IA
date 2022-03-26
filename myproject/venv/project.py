@@ -16,7 +16,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 import pathlib
-filenameModel = '\model\\finalized_model.sav'
+filenameModel = '\model\\model.sav'
 filenameVectorizer = '\model\\vectorizer.sav'
 modelPath = str(pathlib.Path(__file__).parent)
 
@@ -116,55 +116,29 @@ from sklearn.linear_model import LogisticRegression
 model=LogisticRegression(solver='liblinear')
 model.fit(X_train,y_train)
 
-print("Score on training data is: "+str(model.score(X_train,y_train)))
-print("Score on testing data is: "+str(model.score(X_test,y_test)))
-
-
-def analyseComment(comment):
-    loaded_model = pickle.load(open(modelPath, 'rb'))
-    comment=vectorizer.transform(comment)
-
-    #retourne le résultat positif ou négatif
-    return loaded_model.predict(comment)
-
+#print("Score on training data is: "+str(model.score(X_train,y_train)))
+#print("Score on testing data is: "+str(model.score(X_test,y_test)))
 
 
 #DUMP du model
 # save the model to disk
 pickle.dump(model, open(modelPath + filenameModel, 'wb'))
+print("Sauvegarde du modele apres apprentissage réussie!")
 
 pickle.dump(vectorizer, open(modelPath + filenameVectorizer, 'wb'))
-
-
-
-# In[12]:
+print("Sauvegarde du vectorizer apres initialisation réussie!")
 
 
 # tester sur une nouvelle valeur 
 #newval = ["While the diaper pins are attractive, the metal in the pins I received are flimsy and did not hold up to the thick fabric I used them on. Fortunately there was no baby involved"]
 
 #commentaire à analyser
-newval = ["I loved that movie. IN-CRE-DI-BLE!"]
-#print(analyseComment(newval))
-# In[13]:
-
+#newval = ["I loved that movie. IN-CRE-DI-BLE!"]
 
 #newval=vectorizer.transform(newval)
-
-# In[14]:
 
 #retourne le résultat positif ou négatif
 #model.predict(newval)
 
-
-# In[15]:
-
 #pourcentage de positif/négatif
 #model.predict_proba(newval)
-
-
-# In[ ]:
-
-
-
-
