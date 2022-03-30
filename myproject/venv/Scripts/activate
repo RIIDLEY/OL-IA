@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\adamm\Documents\codes_master\gestion_projet\myproject\venv"
+VIRTUAL_ENV="C:\Users\adamm\Documents\codes_master\gestion_projet\OL-IA\myproject\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

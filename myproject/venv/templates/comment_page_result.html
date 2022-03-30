@@ -12,7 +12,7 @@
 <a href="{{url_for('comment_page')}}">Faire une nouvelle recherche</a>
 
 <section id="divTableResult">
-    <form>   
+    <form action="comment_page" method="POST">   
         
             <table id="tableResult">
                 <colgroup>   <!-- This is to define the widths of the columns -->
@@ -30,22 +30,27 @@
                         <th>Correction?</th>
                     </tr>
                 </thead>
-                <tbody>    
-                    {%for key, value in commentResult.items()%}
-                    <tr>
-                        <td id="{{key}}">{{key}}</td>
-                        <td id="resultatModel_{{key}}">{{value}}</td>
-                        <td><input type="radio" class="buttonResult" name="resultat_{{key}}" id="resultat_{{key}}"><label for="true">Correct</label><br>
-                            <input type="radio" class="buttonResult" name="resultat_{{key}}" id="resultat_{{key}}"><label for="false">Faux</label>
-                        </td>
-                    </tr>
-                    {%endfor%}
-                    
+                <tbody>
+                        {%for key, value in commentResult.items()%}
+                        <tr>
+                            <td>
+                                <textarea type="text" name="comment_{{key}}" value="{{value['comment']}}" readonly>{{value['comment']}}</textarea>
+                            </td>
+                            <td>
+                                <input type="text" name="resultModel_{{key}}" value="{{value['comment_result']}}" readonly>
+                            </td>
+                            <td>
+                                <input type="radio" class="buttonResult" name="correction_{{key}}" id="resultat_{{key}}" value="true" required>Correct<br>
+                                <input type="radio" class="buttonResult" name="correction_{{key}}" id="resultat_{{key}}" value="false" required>Faux
+                            </td>
+                        </tr>
+                        {%endfor%}
+
                 </tbody>
 
             </table>
+            <input type="submit" class="button" value="Valider les résultats">
 
-        <input type="submit" class="button" value="Valider les résultats">
     </form>
 
 </section>
