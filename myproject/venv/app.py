@@ -90,7 +90,7 @@ def getCountOfLines(file):
 #methode pour ajouter les lignes du dataset temporaire au dataset final
 def mergeDataDataset(dataset, temp_dataset):
     #si le fichier dataset temporaire contient plus de 100 lignes
-    if getCountOfLines(temp_dataset) > 100:
+    if getCountOfLines(temp_dataset) > 1:
         #ouverture du dataset temporaire en lecture (read) et du dataset final en ecriture (append)
         with open(temp_dataset,'r') as datasetT, open(dataset,'a') as datasetF:
             #pour chaque ligne du fichier dataset temporaire
