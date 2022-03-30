@@ -127,7 +127,6 @@ input {
   font-size: 1em;
   font-family:inherit;
   background:white;
-  overflow:scroll;
 }
 
 textarea{
