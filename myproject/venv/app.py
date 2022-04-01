@@ -28,7 +28,9 @@ def index():
 
 @app.route('/comment_page', methods=["GET", "POST"])
 def comment_page():
+    dataPost = False
     if request.method == "POST":
+        dataPost = True
         requestData = request.form
 
         #variables des inputs de correction
@@ -79,7 +81,7 @@ def comment_page():
         mergeDataDataset(dataset, temp_dataset)
             
 
-    return render_template("comment_page.html")
+    return render_template("comment_page.html", dataPost=dataPost)
 
 #methode pour avoir le nombre de ligne d'un fichier passé en paramètre
 def getCountOfLines(file):
@@ -90,7 +92,7 @@ def getCountOfLines(file):
 #methode pour ajouter les lignes du dataset temporaire au dataset final
 def mergeDataDataset(dataset, temp_dataset):
     #si le fichier dataset temporaire contient plus de 100 lignes
-    if getCountOfLines(temp_dataset) > 1:
+    if getCountOfLines(temp_dataset) > 100:
         #ouverture du dataset temporaire en lecture (read) et du dataset final en ecriture (append)
         with open(temp_dataset,'r') as datasetT, open(dataset,'a') as datasetF:
             #pour chaque ligne du fichier dataset temporaire
@@ -107,7 +109,7 @@ def mergeDataDataset(dataset, temp_dataset):
         print("Relance du script du modele...")
         subprocess.Popen(["python", "project.py"])
         #os.system("project.py")
-        print("Script du modele executé avec succès!")
+        #print("Script du modele executé avec succès!")
 
 
 

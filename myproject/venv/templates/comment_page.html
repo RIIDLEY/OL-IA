@@ -10,6 +10,11 @@
 
 <h1>Analyse de Commentaire</h1>
 <section id="sectionCommentPage">
+    {% if dataPost %}
+        <p style="background-color: lightgreen;text-align: center;">Les corrections ont bien été prises en compte.</p>
+    {% else %}
+        <p style="background-color: lightcoral;text-align: center;">Une erreur est survenue. Veuillez réessayer!</p>
+    {% endif %}
     <form action="comment_page_result" method="POST">
         <p>Veuillez saisir le commentaire à analyser</p>
         <div id="div_comment">
