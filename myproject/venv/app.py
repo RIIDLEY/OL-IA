@@ -1,4 +1,5 @@
 from ctypes import sizeof
+from gettext import NullTranslations
 import pathlib
 from flask import Flask, jsonify, redirect, render_template, session, request, url_for
 import subprocess as sp
@@ -28,7 +29,7 @@ def index():
 
 @app.route('/comment_page', methods=["GET", "POST"])
 def comment_page():
-    dataPost = False
+    dataPost = None
     if request.method == "POST":
         dataPost = True
         requestData = request.form
